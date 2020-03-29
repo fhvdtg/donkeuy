@@ -22,8 +22,6 @@ const ytdl = require('ytdl-core');
 
 const fs = require('fs');
 
-const FFMPEG = require('ffmpeg');
-
 const gif = require("gif-search");
 
 const Canvas = require("canvas");
@@ -36,10 +34,6 @@ const welcome = JSON.parse(fs.readFileSync("./welcomer.json", "utf8"));
 let xp = require('./xp.json'); //سوي ملف بأسم xp.json
 
 const reportjson = JSON.parse(fs.readFileSync("./report.json", "utf8"));
-
-const rWlc = JSON.parse(fs.readFileSync("./AutoRole.json", "utf8"));
-
-const Captcha = JSON.parse(fs.readFileSync("./Captcha.json","utf8"));
 
 const afk = require('./afk.json');
 
@@ -3194,113 +3188,6 @@ client.on('ready', () => {
     });
   });
 });
-
-client.on('guildMemberAdd', member => {
-  member.guild.fetchInvites().then(guildInvites => {
-    const gamer = invites[member.guild.id];
-    invites[member.guild.id] = guildInvites;
-    const invite = guildInvites.find(i => gamer.get(i.code).uses < i.uses);
-    const inviter = client.users.get(invite.inviter.id);
-    const welcome = member.guild.channels.find(channel => channel.name === "「👋」welcome");
-    welcome.send(` ||${member.user.tag}|| invited by ||${inviter.tag}|| invites =  ||${invite.uses}|| `)
-  });
-}); 
-
-client.on('message', async message => {
-    if(message.author.bot) return;
-    if(message.author.channel == "dm") return;
-    var prefix = "$"; //البريفكس
-    if(message.content == prefix+"verify1"){
-        if(!message.author.channel == "618106977201160194") return; //ايدي الروم التفعيل
-
-                let log = message.guild.channels.find('name', 'verify_log'); //روم لوق لو واحد فعل نفسه تجيك معلومات انو الشخص فعل نفسه ومعلومات عنه
-        //ازا تريد تضيف ارقام او احرف  مافي مشكلة ضيف
-        var r1 = ["4444", "4734", "9753", "7532", "7423", "5832", "8866", "1122", "1199", "1188", "1177", "1238", "1532",
-        "9877", "5555", "9238", "9374", "9988", "6611", "9877", "4341", "8422", "7434", "8853", "9997", "9999", "5385",
-    "Ad82", "a824j", "wak4", "8sdb", "88sd", "8a8dw", "8adj", "adw82" , "ad823", "9933", "8sj2", "wad82"];
-
-        var r3 = Math.floor(Math.random()*r1.length);
-        var verify = new Discord.RichEmbed()
-        .setColor("RANDOM")
-        .setTitle('Checking..')
-        .setThumbnail(message.author.avatarURL)
-        .setDescription(`**Type This Numebr:**` + '``' + `n${r1[r3]}`+'``')
-        .setFooter(`${message.author.username}#${message.author.discriminator}`);
-        message.channel.send(verify)
-        var verifed = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setTitle('**Verifed**')
-        .setThumbnail(message.author.avatarURL)
-        .setDescription('```Done You have been Verifed```')
-        .setFooter(`${message.author.username}#${message.author.discriminator}`);
-        var verifedlog = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setTitle('**User has been Verifed**')
-        .setThumbnail(message.author.avatarURL)
-        .setDescription('```'+`User: ${message.author.username}#${message.author.discriminator}nUser ID: ${message.author.id}nUser Joined Discord At: ${moment(message.author.createdAt).format('D/MM/YYYY h:mm a')}nUser JoinedAt: ${moment(message.author.joinedAt).format('D/MM/YYYY h:mm a')}`+'```')
-        .setTimestamp()
-        .setFooter(`Verifed On`);
-        var checknum = message.channel.awaitMessages(msg => msg.content == r1[r3], 
-            {
-                maxMatches: 1,
-                time: 10000,
-                errors: ['time']
-            })
-
-            checknum.catch(() =>{
-                checknum.delete()
-                message.delete()
-                msg.delete()
-                message.channel.send('**You are not activated. Please try again**')
-            })
-
-            checknum.then(w=> {
-                message.guild.member(message.author).addRole(message.guild.roles.find("name", "Member")); //رتبة الي تجيه
-                message.author.send(verifed)
-                log.send(verifedlog)
-                })
-    }
-});
-
-client.on("message", message => {
-    if(message.content.startsWith("verify2")) { // الامر
-      let number = Math.floor((Math.random() * 4793) + 17); // تعريف الرقم بيكون عشوائي math.random + math.floor عشان مايكون فيه فواصل
-    var Canvas = require('canvas') // تعريف الكانفاس لازم تشيله اذا كنت معرفه قبل
-  , Image = new Canvas.Image // صنع صورة جديدة
-  , canvas = Canvas.createCanvas(89, 50) // قياسات الصورة
-  , ctx = canvas.getContext('2d');
-  ctx.font = '25px Impact'; // الخط
-  let args = message.content.split(" ").slice(1); // تعريف ال args
- 
-Image.src = canvas.toBuffer();
- 
-    console.log(Image);
-ctx.fillText(num,17, 35); // احداثيات الرقم
- 
- 
-ctx.beginPath();
-ctx.lineTo(50, 102);
-ctx.stroke();
-      message.reply('**Write the number shown in the image**')
-      let filter = m => m.author.id === message.author.id; // تعريف الفلتر
-      message.channel.sendFile(canvas.toBuffer()).then(m => { //يرسل الصورة
-        message.channel.awaitMessages(res => res.content == `${number}` && filter, { //  محتوى الرسالة الي لازم يكتبها + لازم يكتبها بس الكاتب اذا كتب الرقم شخص ثاني مايزبط ونلاحظ ذا من خلال تعريف الفلتر
-          max: 1,
-          time: 60000,
-          errors: ['time'],
-        }).then(collected => { // اذا كتب الرقم صح
-          message.reply('**You have been activated**') // يرد على العضو
-          message.delete(); // يحذف الرسالة
-          m.delete();
-          message.member.addRole(message.guild.roles.find(c => c.name == "Member")); // الرتبة الي تبي البوت يعطيها للعضو
-          message.member.removeRole(message.guild.roles.find(c => c.name == "Verified?")); // (الرتبة الي تبي البوت يشيلها من العضو (يمديك تحذف ذا السطر
-          // السطر الي فوق يمديك تشيله اذا كنت تبي  البوت مايشيل منه اي رتبة بس يعطيه رتبة
-        }).catch(() => {
-          m.edit(`You took to long to type the number.nRe-type the command again if you want to verify yourself.`).then(m2 => m.delete(15000));
-});
-})
-}
-})
 
  client.on('ready', function(){
     var ms = 10000 ;
