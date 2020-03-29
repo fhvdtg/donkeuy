@@ -46,9 +46,6 @@ const developers = ["436918120184021012"]
 
 
 
-client.on('ready', () => { //code bot not leave room voice //Bot Is Online
-    client.channels.get("629956236078612500").join(); //by :n3k4a 
-    });
 
 client.on("message", (message) => {
 
@@ -167,12 +164,12 @@ client.on('message', message => {
 
 client.on('message', msg => {
   if(msg.content === 'Hello')
-  msg.reply('Hello!')
+  msg.reply('Hello! ')
 });
 
 client.on('message', msg => {
   if(msg.content === 'Hi')
-  msg.reply('Hi!')
+  msg.reply('Hi! ')
 });
 
 client.on('message', msg => {
@@ -182,17 +179,17 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   if(msg.content === 'Back')
-  msg.reply('Welcome Back')
+  msg.reply('Welcome Back ')
 });
 
 client.on('message', msg => {
   if(msg.content === 'IP')
-  msg.reply('IP: play.vortexprison.net')
+  msg.reply('IP: play.vortexprison.net ')
 });
 
 client.on('message', msg => {
   if(msg.content === 'Bye')
-  msg.reply('Good Bye ❤')
+  msg.reply('Good Bye ❤ ')
 });
  
 client.on('message', message => {
@@ -371,7 +368,7 @@ client.on("message", message => {
 });
 
 client.on('guildMemberAdd', member => {
-var channel = member.guild.channels.find('name', '「👋」welcome);
+var channel = member.guild.channels.find('name', '「👋」welcome');
     if(!channel) return;
 channel.send('**Welcome** ' + `${member}` + ' **To** ' + `__${member.guild.name}__` + ' **Server** 💕')          
  
