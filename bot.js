@@ -576,7 +576,7 @@ client.on('message', message => {
               const Embed11 = new Discord.RichEmbed()
         .setColor("RANDOM")
         
-    .setDescription("Link of the server- Bot by VortexPrison")
+    .setDescription("VortexPrison Server - Bot by MrBloods")
       message.author.sendEmbed(Embed11)
     }
 });
@@ -719,7 +719,7 @@ client.on('messageUpdate', (oldMessage, newMessage) => {
     if(!oldMessage.guild.member(client.user).hasPermission('EMBED_LINKS')) return;
     if(!oldMessage.guild.member(client.user).hasPermission('MANAGE_MESSAGES')) return;
  
-    var logChannel = oldMessage.guild.channels.find(c => c.name === 'log');
+    var logChannel = oldMessage.guild.channels.find(c => c.name === '「📋」changelog');
     if(!logChannel) return;
  
     if(oldMessage.content.startsWith('https://')) return;
@@ -742,7 +742,7 @@ client.on('roleCreate', role => {
     if(!role.guild.member(client.user).hasPermission('EMBED_LINKS')) return;
     if(!role.guild.member(client.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
-    var logChannel = role.guild.channels.find(c => c.name === 'log');
+    var logChannel = role.guild.channels.find(c => c.name === '「📋」changelog');
     if(!logChannel) return;
  
     role.guild.fetchAuditLogs().then(logs => {
@@ -765,7 +765,7 @@ client.on('roleDelete', role => {
     if(!role.guild.member(client.user).hasPermission('EMBED_LINKS')) return;
     if(!role.guild.member(client.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
-    var logChannel = role.guild.channels.find(c => c.name === 'log');
+    var logChannel = role.guild.channels.find(c => c.name === '「📋」changelog');
     if(!logChannel) return;
  
     role.guild.fetchAuditLogs().then(logs => {
@@ -788,7 +788,7 @@ client.on('roleUpdate', (oldRole, newRole) => {
     if(!oldRole.guild.member(client.user).hasPermission('EMBED_LINKS')) return;
     if(!oldRole.guild.member(client.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
-    var logChannel = oldRole.guild.channels.find(c => c.name === 'log');
+    var logChannel = oldRole.guild.channels.find(c => c.name === '「📋」changelog');
     if(!logChannel) return;
  
     oldRole.guild.fetchAuditLogs().then(logs => {
@@ -849,7 +849,7 @@ client.on('channelCreate', channel => {
     if(!channel.guild.member(client.user).hasPermission('EMBED_LINKS')) return;
     if(!channel.guild.member(client.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
-    var logChannel = channel.guild.channels.find(c => c.name === 'log');
+    var logChannel = channel.guild.channels.find(c => c.name === '「📋」changelog');
     if(!logChannel) return;
  
     if(channel.type === 'text') {
@@ -882,7 +882,7 @@ client.on('channelDelete', channel => {
     if(!channel.guild.member(client.user).hasPermission('EMBED_LINKS')) return;
     if(!channel.guild.member(client.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
-    var logChannel = channel.guild.channels.find(c => c.name === 'log');
+    var logChannel = channel.guild.channels.find(c => c.name === '「📋」changelog');
     if(!logChannel) return;
  
     if(channel.type === 'text') {
@@ -913,7 +913,7 @@ client.on('channelDelete', channel => {
 client.on('channelUpdate', (oldChannel, newChannel) => {
     if(!oldChannel.guild) return;
  
-    var logChannel = oldChannel.guild.channels.find(c => c.name === 'log');
+    var logChannel = oldChannel.guild.channels.find(c => c.name === '「📋」changelog');
     if(!logChannel) return;
  
     if(oldChannel.type === 'text') {
@@ -1084,7 +1084,7 @@ client.on('guildUpdate', (oldGuild, newGuild) => {
     })
 });
 client.on('guildMemberUpdate', (oldMember, newMember) => {
-    var logChannel = oldMember.guild.channels.find(c => c.name === 'log');
+    var logChannel = oldMember.guild.channels.find(c => c.name === '「📋」changelog');
     if(!logChannel) return;
  
     oldMember.guild.fetchAuditLogs().then(logs => {
@@ -1154,7 +1154,7 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
     }
 });
 client.on('guildMemberAdd', member => {
-  var logChannel = member.guild.channels.find(c => c.name === 'log');
+  var logChannel = member.guild.channels.find(c => c.name === '「📋」changelog');
   if(!logChannel) return;
  
   let newMember = new Discord.RichEmbed()
@@ -1174,7 +1174,7 @@ function Days(date) {
     return days + (days == 1 ? " day" : " days") + " ago";
 }
 client.on('guildMemberRemove', member => {
-  var logChannel = member.guild.channels.find(c => c.name === 'log');
+  var logChannel = member.guild.channels.find(c => c.name === '「📋」changelog');
   if(!logChannel) return;
  
   let leaveMember = new Discord.RichEmbed()
@@ -1195,7 +1195,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
     if(!voiceOld.guild.member(client.user).hasPermission('EMBED_LINKS')) return;
     if(!voiceOld.guild.member(client.user).hasPermission('VIEW_AUDIT_LOG')) return;
  
-    var logChannel = voiceOld.guild.channels.find(c => c.name === 'log');
+    var logChannel = voiceOld.guild.channels.find(c => c.name === '「📋」changelog');
     if(!logChannel) return;
  
     voiceOld.guild.fetchAuditLogs().then(logs => {
@@ -1448,7 +1448,7 @@ var flip = ["**__HEADS__**",
 .setDescription(flip[Math.floor(Math.random() * flip.length)])
 .setThumbnail("https://cdn.onlinewebfonts.com/svg/img_441809.png")
 .setColor(0xd3d0c4)
-   .setFooter(`Bot by SOWRZ Clan`)
+   .setFooter(`Bot by MrBloods`)
 message.channel.sendEmbed(cat);
 
     }
@@ -1703,242 +1703,7 @@ if(msg.content.startsWith(`${prefix}topservers`)){
   msg.channel.send(serveremmbed);
 }});//zine pixel
 
-client.on('message', async msg => { 
-	if (msg.author.bot) return undefined;
-    if (!msg.content.startsWith(prefix)) return undefined;
-    
-    const args = msg.content.split(' ');
-	const searchString = args.slice(1).join(' ');
-    
-	const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
-	const serverQueue = queue.get(msg.guild.id);
 
-	let command = msg.content.toLowerCase().split(" ")[0];
-	command = command.slice(prefix.length)
-
-	if (command === `play`) {
-		const voiceChannel = msg.member.voiceChannel;
-        
-        if (!voiceChannel) return msg.channel.send("You didn't enter the audio room.");
-        
-        const permissions = voiceChannel.permissionsFor(msg.client.user);
-        
-        if (!permissions.has('CONNECT')) {
-
-			return msg.channel.send("I don't have permissions to enter the room");
-        }
-        
-		if (!permissions.has('SPEAK')) {
-
-			return msg.channel.send("I can't speak on this room");
-		}
-
-		if (!permissions.has('EMBED_LINKS')) {
-
-			return msg.channel.sendMessage("I don't have permissions to send links")
-		}
-
-		if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
-
-			const playlist = await youtube.getPlaylist(url);
-            const videos = await playlist.getVideos();
-            
-
-			for (const video of Object.values(videos)) {
-                
-                const video2 = await youtube.getVideoByID(video.id); 
-                await handleVideo(video2, msg, voiceChannel, true); 
-            }
-			return msg.channel.send(`**${playlist.title}**, Just added to the queue!`);
-		} else {
-
-			try {
-
-                var video = await youtube.getVideo(url);
-                
-			} catch (error) {
-				try {
-
-					var videos = await youtube.searchVideos(searchString, 5);
-					let index = 0;
-                    const embed1 = new Discord.RichEmbed()
-                    .setTitle(":mag_right:  YouTube Search Results :")
-                    .setDescription(`
-                    ${videos.map(video2 => `${++index}. **${video2.title}**`).join('\n')}`)
-                    
-					.setColor("#f7abab")
-					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
-					
-/////////////////					
-					try {
-
-						var response = await msg.channel.awaitMessages(msg2 => msg2.content > 0 && msg2.content < 11, {
-							maxMatches: 1,
-							time: 15000,
-							errors: ['time']
-						});
-					} catch (err) {
-						console.error(err);
-						return msg.channel.send('The song was not chosen');
-                    }
-                    
-					const videoIndex = parseInt(response.first().content);
-                    var video = await youtube.getVideoByID(videos[videoIndex - 1].id);
-                    
-				} catch (err) {
-
-					console.error(err);
-					return msg.channel.send("I didn't find any results!");
-				}
-			}
-
-            return handleVideo(video, msg, voiceChannel);
-            
-        }
-        
-	} else if (command === `skip`) {
-
-		if (!msg.member.voiceChannel) return msg.channel.send("You should be in an audio room");
-        if (!serverQueue) return msg.channel.send("There are no songs to skip");
-
-		serverQueue.connection.dispatcher.end('The song was skipped');
-        return undefined;
-        
-	} else if (command === `stop`) {
-
-		if (!msg.member.voiceChannel) return msg.channel.send("You should be in an audio room");
-        if (!serverQueue) return msg.channel.send("There is no Queue to stop!!");
-        
-		serverQueue.songs = [];
-		serverQueue.connection.dispatcher.end('The song has been paused. It has exited the audio track');
-        return undefined;
-        
-	} else if (command === `vol`) {
-
-		if (!msg.member.voiceChannel) return msg.channel.send("You should be in an audio room");
-		if (!serverQueue) return msg.channel.send('It only works when playing an audio clip');
-        if (!args[1]) return msg.channel.send(`The pitch of the voice has been changed to**${serverQueue.volume}**`);
-        
-		serverQueue.volume = args[1];
-        serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 50);
-        
-        return msg.channel.send(`The volume now**${args[1]}**`);
-
-	} else if (command === `np`) {
-
-		if (!serverQueue) return msg.channel.send('There is no Queue!');
-		const embedNP = new Discord.RichEmbed()
-	    .setDescription(`Now playing **${serverQueue.songs[0].title}**`)
-        return msg.channel.sendEmbed(embedNP);
-        
-	} else if (command === `queue`) {
-		
-		if (!serverQueue) return msg.channel.send('There is no Queue!!');
-		let index = 0;
-//	//	//
-		const embedqu = new Discord.RichEmbed()
-        .setTitle("The Queue Songs :")
-        .setDescription(`
-        ${serverQueue.songs.map(song => `${++index}. **${song.title}**`).join('\n')}
-**Now playing :** **${serverQueue.songs[0].title}**`)
-        .setColor("#f7abab")
-		return msg.channel.sendEmbed(embedqu);
-	} else if (command === `pause`) {
-		if (serverQueue && serverQueue.playing) {
-			serverQueue.playing = false;
-			serverQueue.connection.dispatcher.pause();
-			return msg.channel.send('Stopped');
-		}
-		return msg.channel.send('Waiting for the clip to play');
-	} else if (command === "resume") {
-
-		if (serverQueue && !serverQueue.playing) {
-			serverQueue.playing = true;
-			serverQueue.connection.dispatcher.resume();
-            return msg.channel.send('Done');
-            
-		}
-		return msg.channel.send('Queue is empty!');
-	}
-
-	return undefined;
-});
-
-async function handleVideo(video, msg, voiceChannel, playlist = false) {
-	const serverQueue = queue.get(msg.guild.id);
-	console.log(video);
-	
-
-	const song = {
-		id: video.id,
-		title: Util.escapeMarkdown(video.title),
-		url: `https://www.youtube.com/watch?v=${video.id}`
-	};
-	if (!serverQueue) {
-		const queueConstruct = {
-			textChannel: msg.channel,
-			voiceChannel: voiceChannel,
-			connection: null,
-			songs: [],
-			volume: 5,
-			playing: true
-		};
-		queue.set(msg.guild.id, queueConstruct);
-
-		queueConstruct.songs.push(song);
-
-		try {
-			var connection = await voiceChannel.join();
-			queueConstruct.connection = connection;
-			play(msg.guild, queueConstruct.songs[0]);
-		} catch (error) {
-			console.error(`I could not join the voice channel: ${error}!`);
-			queue.delete(msg.guild.id);
-			return msg.channel.send(`Can't join this channel: ${error}!`);
-		}
-	} else {
-		serverQueue.songs.push(song);
-		console.log(serverQueue.songs);
-		if (playlist) return undefined;
-		else return msg.channel.send(`**${song.title}**, The clip was added to the queue `);
-	} 
-	return undefined;
-}
-
-function play(guild, song) {
-	const serverQueue = queue.get(guild.id);
-
-	if (!song) {
-		serverQueue.voiceChannel.leave();
-		queue.delete(guild.id);
-		return;
-	}
-	console.log(serverQueue.songs);
-
-	const dispatcher = serverQueue.connection.playStream(ytdl(song.url))
-		.on('end', reason => {
-			if (reason === 'Stream is not generating quickly enough.') console.log('Song ended.');
-			else console.log(reason);
-			serverQueue.songs.shift();
-			play(guild, serverQueue.songs[0]);
-		})
-		.on('error', error => console.error(error));
-	dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
-
-	serverQueue.textChannel.send(`**${song.title}**, is now playing!`);
-}
-
-
-client.on('ready', () => {
-   console.log(`----------------`);
-      console.log(`Desert Bot- Script By : EX Clan`);
-        console.log(`----------------`);
-      console.log(`ON ${client.guilds.size} Servers '     Script By : EX Clan ' `);
-    console.log(`----------------`);
-  console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Bot by MrBloods | !help `,"http://twitch.tv/MrBloods")
-client.user.setStatus("dnd")
-});
 
 client.on('message', message => {
   if (message.channel.id === "693849611080826911") {
@@ -1987,9 +1752,9 @@ client.on('guildMemberAdd', async member => { // membed add event
             let res = await SQLite.get(`SELECT * FROM linkSysteme WHERE code = '${invite.code}'`) // select from sql
             if(!res) { // if the code does'nt exists
             console.log(invite.code) // for test
-            client.channels.get(inv_room).send("**Welcom To "+member.guild.name+"🌹 .\n       Joined By: "+invite.inviter+".**") // send message to welcome room
+            client.channels.get(inv_room).send("**Welcome To "+member.guild.name+"🌹 .\n       Joined By: "+invite.inviter+".**") // send message to welcome room
             } else { // if the code link exitst
-                client.channels.get(inv_room).send("**Welcom To "+member.guild.name+"🌹 .\n       Joined By: <@!"+res.id+">.**") // send message to welcome room
+                client.channels.get(inv_room).send("**Welcome To "+member.guild.name+"🌹 .\n       Joined By: <@!"+res.id+">.**") // send message to welcome room
                 console.log(res.code) // for test
         } // end if
     }); // end fetchs :)
@@ -2147,27 +1912,6 @@ client.on('message', message => {
       }
       message.channel.send(tl)
     }
-});
-
-client.on('ready',async () => {
-  let GUILDID = '688715593649487946'; // اي دي السيرفر  
-  let CHANNELID = '692480228538187846'; // اي دي الروم
-  voiceStay(GUILDID, CHANNELID);
-  function voiceStay(guildid, channelid) {
-    if(!guildid) throw new Error('Syntax: voiceStay function requires guildid');
-    if(!channelid) throw new Error('Syntax: voiceStay function requires channelid');
-
-    let guild = client.guilds.get(guildid);
-    let channel = guild.channels.get(channelid);
-
-    if(channel.type === 'voice') {
-      channel.join().catch(e => {
-        console.log(`Failed To Join :: ${e.message}`);
-      });
-    } else {
-      console.log(`Channel Type ::  ${channel.type}, It must be Voice.`);
-    }
-  }
 });
 
 client.on('message' , async (message) => {
@@ -2548,111 +2292,6 @@ client.on('message', message => {
 )}
 })
 
-client.on("message", msg => {
-    if(!msg.guild) return;
-    if(msg.author.bot) return;
-    if(!Captcha[msg.guild.id]) Captcha[msg.guild.id] = {
-        role: "Member",
-        room: "write-captcha",
-        cmd: "captcha"
-    }
-    if(msg.content.startsWith(prefix + "setCaptcharole")){
-                if(!msg.guild.member(msg.author).hasPermission('MANAGE_GUILD')) return message.reply(`**Sorry But You Don\'t Have Permission \`MANAGE_GUILD\`**`).then(m => m.delete(5000));
-        let args = msg.content.split(' ').slice(1).join(' ');
-        if(!args) return msg.reply(`**You must write the name of the rank for activation.**`).then(m => m.delete(5000));
-        if(!msg.guild.roles.find("name",args)) return msg.channel.send(`There is no rank by name \`${args}\` `).then(m => m.delete(5000));
-        Captcha[msg.guild.id].role = args
-  msg.reply(`**Activation rank name changed to \`${args}\`**`).then(m => m.delete(5000));
-                    fs.writeFile("./Captcha.json", JSON.stringify(Captcha), function(a) {
-        if (a) throw a;
-    })
-    }
-    if(msg.content.startsWith(prefix + "setCaptcharoom")){
-if(!msg.guild.member(msg.author).hasPermission('MANAGE_GUILD')) return message.channel.send(`**Sorry But You Don\'t Have Permission \`MANAGE_GUILD\`**`).then(m => m.delete(5000));
-         let args2 = msg.content.split(' ').slice(1).join(' ');
-        if(!args2) return msg.reply(`**You must write the name of the room for activation.**`).then(m => m.delete(5000));
-         if(!msg.guild.channels.find("name",args2)) return msg.channel.send(`**There is no rom in the name \`${args2}\`**`).then(m => m.delete(5000));
-        Captcha[msg.guild.id].room = args2
-  msg.reply(`**The romanization name for activation has been changed to \`${args2}\`**`).then(m => m.delete(5000));
-            fs.writeFile("./Captcha.json", JSON.stringify(Captcha), function(a) {
-        if (a) throw a;
-    })
-    }
-      if(msg.content.startsWith(prefix + "setCaptchacmd")){
-if(!msg.guild.member(msg.author).hasPermission('MANAGE_GUILD')) return message.channel.send(`**Sorry But You Don\'t Have Permission \`MANAGE_GUILD\`**`).then(m => m.delete(5000));
-         let args3 = msg.content.split(' ').slice(1).join(' ');
-        if(!args3) return msg.reply(`**You have to write your activation command.**`).then(m => m.delete(5000));
- 
-        Captcha[msg.guild.id].cmd = args3
-  msg.reply(`**The activation command for has been changed \`${args3}\` **`).then(m => m.delete(5000));
-            fs.writeFile("./Captcha.json", JSON.stringify(Captcha), function(a) {
-        if (a) throw a;
-    })
-      }
-});
- 
-        client.on("message",async message => {
-        if(!message.channel.guild) return;
-        if(!Captcha[message.guild.id]) Captcha[message.guild.id] = {
-        role: "Nothing",
-        room: "Nothing",
-        cmd: "Captcha"
-        }
-        if(message.content.startsWith(prefix + Captcha[message.guild.id].cmd || "Captcha")){
-        if(Captcha[message.guild.id].role === 'Nothing') return message.reply(`**The activation level is not selected \`${prefix}setCaptcharole\`**`).then(m => m.delete(5000));
-        if(Captcha[message.guild.id].room === 'Nothing') return message.reply(`**You have not set your room activate \`${prefix}setCaptcharoom\`**`).then(m => m.delete(5000));
-        if (message.guild.member(message.author).roles.find(x => x.name === `${Captcha[message.guild.id].role}`)) return message.channel.send(`**${message.author}, You already have the rank**`).then(m => m.delete(5000));
-        if(!message.channel.guild) return message.channel.send(`**This is only for servers**`).then(m => m.delete(5000));
-        if(!message.guild.member(client.user).hasPermission('MANAGE_ROLES')) return message.channel.send(`**Sorry But I Don\'t Have Permission \`MANAGE_GUILD\`**`).then(m => m.delete(5000));
-        if(message.channel.name !== `${Captcha[message.guild.id].room}`) return message.reply(`**You are not in the right room please go to room \`${Captcha[message.guild.id].room}\`**`).then(m => m.delete(5000));
-        const canvas = Canvas.createCanvas(108 , 40);
-        const ctx = canvas.getContext('2d');
-        const background = await Canvas.loadImage("https://cdn.discordapp.com/attachments/608278049091223552/617791172810899456/hmmm.png");
-        ctx.drawImage(background, 0, 0, canvas.width, canvas.height);  
-        var one = Math.floor(Math.random() * 9) + 1;
-        var two = Math.floor(Math.random() * 9) + 1;
-        var three = Math.floor(Math.random() * 9) + 1;
-        var four = Math.floor(Math.random() * 9) + 1;
-        var number = `${one}${two}${three}${four}`;
-        ctx.font = '20px Arial Bold';
-        ctx.fontSize = '20px';
-        ctx.fillStyle = "#ffffff";
-        ctx.fillText(number, canvas.width / 2.4, canvas.height / 1.7);
-        const attachment = new Discord.Attachment(canvas.toBuffer());
-        message.channel.send(attachment).then(m => {
-        message.channel.awaitMessages(m => m.author.id === message.author.id, {max: 1, time: 60000}).then(c => {
-        if(c.first().content !== number) {
-        m.delete();
-        }else if(c.first().content === number) {
-        m.delete();
-        message.member.addRole(message.guild.roles.find("name", Captcha[message.guild.id].role));    
-        message.channel.send(`**${message.author.username}, You have been activated successfully.*`).then(m => m.delete(1000));
-        }
-        })
-        });
-        }
-        });
-
-client.on("message", message => {
-    if(message.content.startsWith("captcha")) {
-      let num = Math.floor((Math.random() * 4783) + 10);
-    
-      message.channel.send(`Please type the following number: **${num}**`).then(m => {
-        message.channel.awaitMessages(res => res.content == `${num}`, {
-          max: 1,
-          time: 60000,
-          errors: ['time'],
-        }).then(collected => {
-          message.delete();
-          m.delete();
-          message.member.addRole(message.guild.roles.find(c => c.name == "Member"));
-        }).catch(() => {
-          m.edit(`You took to long to type the number.\nRe-type the command again if you want to verify yourself.`).then(m2 => m.delete(15000));
-});
-})
-}
-})
-
 client.on('message',async rebel => {
       if(rebel.author.bot) return;
   if (afk[rebel.author.id]) {
@@ -2992,20 +2631,6 @@ leave: 'On'
 })
     })
 }})
- 
- 
-      client.on("guildMemberRemove", member => {
-            if(!welcome[member.guild.id]) welcome[member.guild.id] = {
-          onoff: 'On',
-          leave: 'Off'
-        }
-       
-        if(welcome[member.guild.id].onoff === 'Off') return;
-                if(welcome[member.guild.id].leave === 'Off') return;
-    let welcomer = member.guild.channels.find('name', `${welcome[member.guild.id].leavechannel}`)
-    if(!welcomer) return;
-     welcomer.send(`${member} ${welcome[member.guild.id].leavemsg}`);
-      })
 
 client.on('message', message => {//new msg event
 if(!message.channel.guild) return;
@@ -3015,7 +2640,7 @@ if(!message.channel.guild) return;
   //start of create role
   if(!role){
     rainbow =  message.guild.createRole({
-   name: "SOWRZ Clan.",//the role will create name
+   name: "MrBloods.",//the role will create name
    color: "#000000",//the default color
    permissions:[]//the permissions
  //end of create role
@@ -3028,7 +2653,7 @@ message.channel.send('Done The Rainbow Role Setup Has Been Completed')//if the s
 client.on('ready', () => {//new ready event
   setInterval(function(){
       client.guilds.forEach(g => {
-                  var role = g.roles.find('name', 'SOWRZ Clan.');//rainbow role name
+                  var role = g.roles.find('name', 'MrBloods.');//rainbow role name
                   if (role) {
                       role.edit({color : "RANDOM"});
                   };
@@ -3038,9 +2663,9 @@ client.on('ready', () => {//new ready event
 
 client.on("guildMemberAdd", member => {
     member.createDM().then(function (channel) {
-    return channel.send(`:rose: مرحبا بك لسيرفرنا SOWRZ Clan ! :rose: 
-  :crown: منور ياحب : ${member}:crown:  
-  انت العضو رقم: ${member.guild.memberCount} `) 
+    return channel.send(`:rose: Welcome to VortexPrison server ! :rose: 
+  :crown: Have fun!: ${member}:crown:  
+  You're number: ${member.guild.memberCount} `) 
   }).catch(console.error)
   })
 
@@ -3094,36 +2719,6 @@ client.on("message", msg => {
       msg.channel.send(embed);
     }
   });
-
-client.on('message', message => {
-            if (message.content === '!1') {
-              message.channel.sendFile("./5.png");
-            }
-         });
-
-
-
-
-
-         client.on('message', message => {
-            if (message.content === '!2') {
-              message.channel.sendFile("./back.png");
-            }
-         });
-         
-         
-         
-         
-         
-         
-         
-         
-         
-                 client.on('message', message => {
-            if (message.content === '!3') {
-              message.channel.sendFile("./wlc.png");
-            }
-         });
 
 client.on('message',async message => {
   let args = message.content.split(" ").slice(1).join(" ");
